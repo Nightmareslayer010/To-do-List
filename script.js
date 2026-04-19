@@ -9,3 +9,14 @@ let inputfield = document.querySelector(".input-task");
 let date = document.querySelector(".dueDate");
 let addbtn = document.querySelector(".add-btn");
 let tasklist = document.querySelector(".tasklist");
+
+//functions
+
+function createtasks(taskobject) {
+  //list creation
+  let li = document.createElement("li");
+  let span = document.createElement("span");
+  span.textContent = taskobject.text;
+
+  let date = document.createElement("small");
+}
