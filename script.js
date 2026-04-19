@@ -18,5 +18,7 @@ function createtasks(taskobject) {
   let span = document.createElement("span");
   span.textContent = taskobject.text;
 
+  // date creation
   let date = document.createElement("small");
+  date.textContent = taskobject.dueDate || "";
 }
