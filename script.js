@@ -21,4 +21,30 @@ function createtasks(taskobject) {
   // date creation
   let date = document.createElement("small");
   date.textContent = taskobject.dueDate || "";
+
+  //checkbox creation
+  let checkbox = document.createElement("input");
+  checkbox.type = "input";
+  checkbox.checked = taskobject.completed;
+  if (checkbox.checked) {
+    span.style.textDecoration = "line-throught";
+  } else {
+    span.style.textDecoration = "none";
+  }
+  // checkbox event listener
+  checkbox.addEventListener("click", () => {
+    tasks = tasks.map((t) => {
+      if (t.id === taskobject.id) {
+        return { ...t, completed: checkbox.checked };
+      } else {
+        return t;
+      }
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    if (checkbox.checked) {
+      span.style.textDecoration = "line-throught";
+    } else {
+      span.style.textDecoration = "none";
+    }
+  });
 }
