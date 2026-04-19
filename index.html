@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do-app</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="left">
+        <img src="images/logo.png" alt="logo" />
+        <h1 class="title">NightMare Corporations</h2>
+          <input type="text" class="Search" placeholder="Enter your Search">
+        </div>
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="/about">About</a>
+          <a href="/projects">Projects</a>
+          <a href="/content">Content</a>
+        </nav>
+      <div class="actions">
+        <button class="action-btn">▼ </button>
+        <div class="dropdown">
+          <a href="/login">Login/Signup</a>
+          <a href="/logout">Logout</a>
+          <a href="/Settings">Settings</a>
+        </div>
+      </div>
+    </header>
+    <div class=" content">
+
+<!-- to do container -->
+
+
+
+      <div class="to-do-list">
+        
+        <!-- alignment container of input filed and lists -->
+        <div class="main-container">
+          
+          
+          
+          <h2 class="tasklist-heading">To Do List</h2>
+          <div class="filters">   
+            
+            <button class="filterbtn allbtn">All</button><button class="filterbtn activebtn">Active</button><button class="filterbtn completedbtn">Completed</button>
+          </div>
+          <div class="input-row">  
+            <input type="text" class="input-task" placeholder="Enter Task" />
+            <input type="date" class="dueDate">
+            <button class="add-btn">Add</button>
+          </div>
+            <ul class="tasklist"></ul>
+            
+          </div>
+
+        <!-- alignment container of input filed and lists -->
+
+      </div>
+
+
+
+      <!-- to do container -->
+    </div>
+    <footer class="footer">
+      <p id="footer-text">&#xA9 NightMare Corporation</p>
+      <div class="footer-links">
+        <a href="/terms">Terms&Conditions</a>
+        <a href="/priacyPolicy">Privacy Policy</a>
+        <a href="/Help">Help</a>
+        <a href="/Contact">Contact</a>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
