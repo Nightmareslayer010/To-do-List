@@ -121,3 +121,11 @@ completedbtn.addEventListener("click", () => {
   const completedtasks = tasks.filter((t) => t.completed === true);
   renderlists(completedtasks);
 });
+
+searchfield.addEventListener("input", () => {
+  let searchtext = (searchfield.value || "").toLowerCase();
+  const searchresult = tasks.filter((t) =>
+    (t.text || "").toLowerCase().includes(searchtext),
+  );
+  renderlists(searchresult);
+});
