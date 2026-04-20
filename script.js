@@ -92,4 +92,12 @@ function createtasks(taskobject) {
   li.append(span);
   li.append(editbtn);
   li.append(delbtn);
+  tasklist.appendChild(li);
+}
+
+function renderlists(filteredtasks) {
+  tasklist.innerHTML = "";
+  filteredtasks.forEach((element) => {
+    createtasks(element);
+  });
 }
