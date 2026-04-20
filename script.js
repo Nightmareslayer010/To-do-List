@@ -24,7 +24,7 @@ function createtasks(taskobject) {
 
   //checkbox creation
   let checkbox = document.createElement("input");
-  checkbox.type = "input";
+  checkbox.type = "checkbox";
   checkbox.checked = taskobject.completed;
   if (checkbox.checked) {
     span.style.textDecoration = "line-throught";
@@ -42,7 +42,7 @@ function createtasks(taskobject) {
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
     if (checkbox.checked) {
-      span.style.textDecoration = "line-throught";
+      span.style.textDecoration = "line-through";
     } else {
       span.style.textDecoration = "none";
     }
@@ -56,6 +56,7 @@ function createtasks(taskobject) {
   // edit event listener
   editbtn.addEventListener("click", () => {
     let editfield = document.createElement("input");
+    editfield.classList.add("editfield");
     editfield.value = span.textContent;
     li.replaceChild(editfield, span);
 
@@ -150,7 +151,7 @@ addbtn.addEventListener("click", () => {
   inputfield.value = "";
   date.value = "";
 
-  renderlists(tasks);
+  createtasks(taskobject);
 });
 
 //local storage
@@ -158,6 +159,8 @@ window.addEventListener("load", () => {
   let saved = localStorage.getItem("tasks");
   if (saved) {
     tasks = JSON.parse(saved);
-    renderlists(tasks);
+    tasks.forEach((element) => {
+      createtasks(tasks);
+    });
   }
 });
