@@ -150,5 +150,14 @@ addbtn.addEventListener("click", () => {
   inputfield.value = "";
   date.value = "";
 
-  createtasks(taskobject);
+  renderlists(tasks);
+});
+
+//local storage
+window.addEventListener("load", () => {
+  let saved = localStorage.getItem("tasks");
+  if (saved) {
+    tasks = JSON.parse(saved);
+    renderlists(tasks);
+  }
 });
