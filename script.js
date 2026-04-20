@@ -101,3 +101,23 @@ function renderlists(filteredtasks) {
     createtasks(element);
   });
 }
+
+//event listeners
+
+activebtn.addEventListener("click", () => {
+  dropdown.classList.toggle("show");
+});
+
+allbtn.addEventListener("click", () => {
+  renderlists(tasks);
+});
+
+activebtn.addEventListener("click", () => {
+  const activetasks = tasks.filter((t) => t.completed !== true);
+  renderlists(activetasks);
+});
+
+completedbtn.addEventListener("click", () => {
+  const completedtasks = tasks.filter((t) => t.completed === true);
+  renderlists(completedtasks);
+});
