@@ -75,4 +75,21 @@ function createtasks(taskobject) {
       }
     });
   });
+
+  //delete
+  let delbtn = document.createElement("button");
+  delbtn.textContent = "Delete";
+  delbtn.classList.add("delete-btn");
+
+  //delete event listeners
+  delbtn.addEventListener("click", () => {
+    li.remove();
+
+    tasks = tasks.filter((t) => t.id !== taskobject.id);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  });
+  li.append(checkbox);
+  li.append(span);
+  li.append(editbtn);
+  li.append(delbtn);
 }
