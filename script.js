@@ -90,6 +90,7 @@ function createtasks(taskobject) {
   });
   li.append(checkbox);
   li.append(span);
+  li.append(date);
   li.append(editbtn);
   li.append(delbtn);
   tasklist.appendChild(li);
@@ -128,4 +129,26 @@ searchfield.addEventListener("input", () => {
     (t.text || "").toLowerCase().includes(searchtext),
   );
   renderlists(searchresult);
+});
+
+addbtn.addEventListener("click", () => {
+  if (inputfield.value === "") {
+    inputfield.classList.toggle("emptyfield");
+    return;
+  } else {
+    inputfield.classList.remove("emptyfield");
+  }
+  const inputtext = inputfield.value;
+  let taskobject = {
+    id: Date.now(),
+    completed: false,
+    dueDate: date.value,
+    text: inputtext,
+  };
+  tasks.push(taskobject);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  inputfield.value = "";
+  date.value = "";
+
+  createtasks(taskobject);
 });
